@@ -1,20 +1,8 @@
-terraform {
-  required_providers {
-    azurerm = {
-      # Specify what version of the provider we are going to utilise
-      source = "hashicorp/azurerm"
-      version = ">= 2.4.1"
-    }
-  }
+provider "azurerm"{
+    
+    features {}
 }
-provider "azurerm" {
-  features {
-      key_vault {
-      purge_soft_delete_on_destroy = true
-    }
-  }
-}
-data "azurerm_client_config" "current" {}
+#data "azurerm_client_config" "current" {}
 # Create our Resource Group - Jonnychipz-RG
 resource "azurerm_resource_group" "rg" {
   name     = "jonnychipz-app01"
